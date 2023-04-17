@@ -2,6 +2,6 @@
     width: 170px;
     height: 70px;
 }
-.color{background-color: cornflowerblue;}
+.color,footer{background-color: cornflowerblue;}
 .log{width: 50px;
 height: 50px;}

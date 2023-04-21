@@ -4,7 +4,7 @@
   height: 70px;
 }
 
-.color, footer {
+.color {
   background-color: #6495ed;
 }
 
@@ -33,6 +33,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+footer {
+  background-color: #6495ed;
 }
 
 /*# sourceMappingURL=style.css.map */

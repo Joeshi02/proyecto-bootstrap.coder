@@ -31,7 +31,7 @@ ul {
 }
 
 footer {
-  background-color: #6495ed;
+  background-image: linear-gradient(to top, #6495ed, transparent);
 }
 
 /*# sourceMappingURL=style.css.map */

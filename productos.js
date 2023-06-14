@@ -96,3 +96,10 @@
 //     alert("gracias por preferirnos")
 // }
 // darGracias()
+
+// //circuito 1
+// let precioIngresado = Number(prompt(" ingresar el valor del producto: "))
+// for (let i = 0.30; i<= 1; i++) {
+//     let resultado = precioIngresado * i
+//     alert("El valor del envio es " + "=" + resultado )
+// }

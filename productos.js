@@ -1,105 +1,30 @@
-//circuito 3 
-// let ciudad = prompt("Para calcular envio ingrese su provincia: (ejemplo: buenos aires)")
-// switch (ciudad) {
-//     case 'catamarca':
-//         alert("el valor es 2500 ")
-//         break;
-    
-//     case 'buenos aires':
-//         alert("el valor es 1000")
-//         break;
-        
-//     case 'chaco':
-//         alert("el valor es 2000 ")
-//         break;
+class Product {
+  constructor(title, description, brand, price) {
+    this.title = title;
+    this.description = description;
+    this.brand = brand;
+    this.price = price;
+  }
 
-//     case 'chubut':
-//         alert("el valor es 1800")
-//         break;
+  precioMasIva() {
+    this.price = this.price * 1.3;
+  }
+}
 
-//     case 'cordoba':
-//         alert("el valor es 1600 ")
-//         break;
+let products = [];
+let cantidadDeProductos = Number(prompt("Ingrese la cantidad de productos que se va a agregar: "));
 
-//     case 'corrientes':
-//         alert("el valor es  800")
-//         break;
+for (let index = 0; index < cantidadDeProductos; index++) {
+  let title = prompt("Ingrese el nombre del producto: ");
+  let description = prompt("Ingrese la descripción del producto: ");
+  let brand = prompt("Ingrese la marca del producto: ");
+  let price = parseFloat(prompt("Ingrese el precio del producto: "));
 
-//     case 'entre rios':
-//         alert("el valor es  1200")
-//         break;
+  let product = new Product(title, description, brand, price);
+  product.precioMasIva();
+  products.push(product);
+}
 
-//     case 'formosa':
-//         alert("el valor es 2500")
-//         break;
+console.log(products);
 
-//     case 'jujuy':
-//         alert("el valor es 2500 ")
-//         break;
-
-//     case 'la pampa':
-//         alert("el valor es 2100 ")
-//         break;
-
-//     case 'la rioja':
-//         alert("el valor es 2200")
-//         break;
-
-//     case 'mendoza':
-//         alert("el valor es 2800 ")
-//         break;
-
-//     case 'misiones':
-//         alert("el valor es 3000")
-//         break;
-
-//     case 'neuquen':
-//         alert("el valor es 1800 ")
-//         break; 
-//     case 'rio negro':
-//         alert("el valor es 3500")
-//         break;
-
-//     case 'salta':
-//         alert("el valor es 2500")
-//         break;
-
-//     case 'san juan':
-//         alert("el valor es 2900")
-//         break;
-
-//     case 'san luis':
-//         alert("el valor es 2900")
-//         break;
-
-//     case 'santa cruz':
-//         alert("el valor es 1400")
-//         break;
-
-//     case 'santa fe':
-//         alert("el valor es 1600")
-//         break;
-
-//     case 'santiago del estero':
-//         alert("el valor es 1800")
-//         break;
-
-//     case 'tierra del fuego':
-//         alert("el valor es gratis")
-//         break;
-
-//     case 'tucuman':
-//         alert("el valor es 3000")
-//         break;
-// }
-// function darGracias() {
-//     alert("gracias por preferirnos")
-// }
-// darGracias()
-
-// //circuito 1
-// let precioIngresado = Number(prompt(" ingresar el valor del producto: "))
-// for (let i = 0.30; i<= 1; i++) {
-//     let resultado = precioIngresado * i
-//     alert("El valor del envio es " + "=" + resultado )
-// }
+alert ("El producto fue ingresado con exito. Consulte el precio final con el agente.")

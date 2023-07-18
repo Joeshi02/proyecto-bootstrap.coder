@@ -4,7 +4,7 @@ let nombre = prompt ("ingresar su nombre: ")
 while (nombre=='') {
     nombre = prompt ('Ingrese un nombre valido')
 }
-let edad = (prompt("Bienvenido " + nombre + 'Ingrese su edad:' ))
+let edad = (prompt("Bienvenido " + nombre + 'ingrese su edad:' ))
 while (condition) {
    if (edad>= 18) {
        condition = false

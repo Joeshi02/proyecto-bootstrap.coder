@@ -27,4 +27,4 @@ for (let index = 0; index < cantidadDeProductos; index++) {
 
 console.log(products);
 
-alert ("El producto fue ingresado con exito. Consulte el precio final con el agente.")
+alert ("El producto fue ingresado con exito.")

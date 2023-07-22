@@ -13,27 +13,34 @@ class Products {
   }
 }
 
+// Lista de productos agregados
 let productosAgregados = [];
 
-let boton = document.getElementById("btnAgregar");
-boton.addEventListener('click', () => validar(productosAgregados));
+// Formulario
+let form = document.getElementById("productForm");
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
 
-function validar(productosAgregados) {
-  let name = prompt("Ingrese el nombre del producto");
-  let model = prompt("Ingrese el modelo del producto");
-  let brand = prompt("Ingrese la marca del producto");
-  let price = Number(prompt("Ingrese el precio del producto"));
-  let amount = parseInt(prompt("Ingrese la cantidad del producto"));
-  let imageUrl = prompt("Ingrese la url del producto");
+  let name = document.getElementById("name").value;
+  let model = document.getElementById("model").value;
+  let brand = document.getElementById("brand").value;
+  let price = parseFloat(document.getElementById("price").value);
+  let amount = parseInt(document.getElementById("amount").value);
+  let imageUrl = document.getElementById("imageUrl").value;
+
   let item = new Products(name, model, brand, price, amount, imageUrl);
   productosAgregados.push(item);
-  alert("El producto fue ingresado con éxito");
   console.log('Producto agregado', productosAgregados);
+
+  // Limpia los campos del formulario 
+  form.reset();
+
   const ultimoAgregado = productosAgregados[productosAgregados.length - 1];
   ultimoAgregado.precioMasIva();
   mostrarAgregados();
-}
+});
 
+// Función para  tarjetas
 let containerProducts = document.getElementById('products');
 
 function mostrarAgregados() {
@@ -42,7 +49,7 @@ function mostrarAgregados() {
       const card = document.createElement('div');
       card.classList.add(
           'card',
-          'col-4',
+          'col-2', // Puedes ajustar el tamaño de la columna según tus necesidades
           'm-4',
           'border',
           'border-black',
@@ -50,12 +57,12 @@ function mostrarAgregados() {
       );
       card.innerHTML = `
           <img src="${product.imageUrl}" class="card-img-top imagenProductos" alt="producto" />
-          <div class="card-body d-flex justify-content-center flex-colum">
+          <div class="card-body d-flex justify-content-center flex-column">
               <h5 class="card-title d-flex justify-content-center">${product.name}</h5>
-              <p class="card-text d-flex justify-conten-center">Modelo: ${product.model}</p>
-              <p class="card-text d-flex justify-conten-center">Marca: ${product.brand}</p>
-              <p class="card-text d-flex justify-conten-center">Precio: ${product.price}</p>
-              <p class="card-text d-flex justify-conten-center">Cantidad: ${product.amount}</p>
+              <p class="card-text d-flex justify-content-center">Modelo: ${product.model}</p>
+              <p class="card-text d-flex justify-content-center">Marca: ${product.brand}</p>
+              <p class="card-text d-flex justify-content-center">Precio: ${product.price}</p>
+              <p class="card-text d-flex justify-content-center">Cantidad: ${product.amount}</p>
               <input id="comprar" type="submit" value="comprar" class="d-flex justify-content-center comprar"/>
           </div>`;
       containerProducts.appendChild(card);

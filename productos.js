@@ -16,10 +16,14 @@ class Products {
 // Lista de productos agregados
 let productosAgregados = [];
 
+if (localStorage.getItem('productosAgregados')) {
+  productosAgregados = JSON.parse(localStorage.getItem('productosAgregados'));
+}
+
 // Formulario
 let form = document.getElementById("productForm");
 form.addEventListener('submit', (event) => {
-  event.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
+  event.preventDefault();
 
   let name = document.getElementById("name").value;
   let model = document.getElementById("model").value;
@@ -38,6 +42,7 @@ form.addEventListener('submit', (event) => {
   const ultimoAgregado = productosAgregados[productosAgregados.length - 1];
   ultimoAgregado.precioMasIva();
   mostrarAgregados();
+  localStorage.setItem('productosAgregados', JSON.stringify(productosAgregados));
 });
 
 // Función para  tarjetas
@@ -49,7 +54,7 @@ function mostrarAgregados() {
       const card = document.createElement('div');
       card.classList.add(
           'card',
-          'col-2', // Puedes ajustar el tamaño de la columna según tus necesidades
+          'col-2', 
           'm-4',
           'border',
           'border-black',

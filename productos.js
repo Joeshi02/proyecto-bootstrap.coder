@@ -43,6 +43,9 @@ form.addEventListener('submit', (event) => {
   ultimoAgregado.precioMasIva();
   mostrarAgregados();
   guardarEnLocalStorage();
+  swal.fire ({
+    title: 'El producto fue añadido con exito'
+  })
 });
 
 // Función para  tarjetas

@@ -13,14 +13,12 @@ class Products {
   }
 }
 
-// Lista de productos agregados
 let productosAgregados = [];
 
 if (localStorage.getItem('productosAgregados')) {
   productosAgregados = JSON.parse(localStorage.getItem('productosAgregados'));
 }
 
-// Formulario
 let form = document.getElementById("productForm");
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -36,7 +34,6 @@ form.addEventListener('submit', (event) => {
   productosAgregados.push(item);
   console.log('Producto agregado', productosAgregados);
 
-  // Limpia los campos del formulario 
   form.reset();
 
   const ultimoAgregado = productosAgregados[productosAgregados.length - 1];
@@ -48,7 +45,6 @@ form.addEventListener('submit', (event) => {
   })
 });
 
-// Función para  tarjetas
 let containerProducts = document.getElementById('products');
 
 function mostrarAgregados() {

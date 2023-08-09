@@ -84,7 +84,7 @@ const renderProducts = document.querySelector('#render');
 fetch('/assets/data/data.json')
   .then(respuesta => respuesta.json())
   .then(data => {
-    data.forEach(post => {
+    data.forEach(renderizado => {
       const card = document.createElement('div');
       card.classList.add(
         'card',
@@ -95,13 +95,13 @@ fetch('/assets/data/data.json')
         'cardProduct'
       );
       card.innerHTML = `
-        <img src="${post.imgUrl}" class="card-img-top imagenProductos img-fluid" alt="producto" />
+        <img src="${renderizado.imgUrl}" class="card-img-top imagenProductos img-fluid" alt="producto" />
         <div class="card-body d-flex justify-content-center flex-column p-0">
-          <h5 class="card-title d-flex justify-content-center">${post.name}</h5>
-          <p class="card-text d-flex justify-content-center">Modelo: ${post.model}</p>
-          <p class="card-text d-flex justify-content-center">Marca: ${post.brand}</p>
-          <p class="card-text d-flex justify-content-center">Precio: ${post.price}</p>
-          <p class="card-text d-flex justify-content-center">Stock: ${post.stock}</p>
+          <h5 class="card-title d-flex justify-content-center">${renderizado.name}</h5>
+          <p class="card-text d-flex justify-content-center">Modelo: ${renderizado.model}</p>
+          <p class="card-text d-flex justify-content-center">Marca: ${renderizado.brand}</p>
+          <p class="card-text d-flex justify-content-center">Precio: ${renderizado.price}</p>
+          <p class="card-text d-flex justify-content-center">Stock: ${renderizado.stock}</p>
           <input id="comprar" type="submit" value="comprar" class="d-flex justify-content-center comprar"/>
         </div>`;
       renderProducts.appendChild(card);

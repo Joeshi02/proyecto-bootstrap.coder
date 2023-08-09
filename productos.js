@@ -70,7 +70,7 @@ function mostrarAgregados() {
         <p class="card-text d-flex justify-content-center">Modelo: ${product.model}</p>
         <p class="card-text d-flex justify-content-center">Marca: ${product.brand}</p>
         <p class="card-text d-flex justify-content-center">Precio: ${product.price}</p>
-        <p class="card-text d-flex justify-content-center">Cantidad: ${product.amount}</p>
+        <p class="card-text d-flex justify-content-center">Stock: ${product.amount}</p>
         <input id="comprar" type="submit" value="comprar" class="d-flex justify-content-center comprar"/>
       </div>`;
     containerProducts.appendChild(card);
@@ -82,3 +82,32 @@ function guardarEnLocalStorage() {
 }
 
 mostrarAgregados();
+
+const renderProducts = document.querySelector('#render');
+
+fetch('/assets/data/data.json')
+  .then(respuesta => respuesta.json())
+  .then(data => {
+    data.forEach(post => {
+      const card = document.createElement('div');
+      card.classList.add(
+        'card',
+        'col-3',
+        'm-1',
+        'border',
+        'border-black',
+        'cardProduct'
+      );
+      card.innerHTML = `
+        <img src="${post.imgUrl}" class="card-img-top imagenProductos img-fluid" alt="producto" />
+        <div class="card-body d-flex justify-content-center flex-column p-0">
+          <h5 class="card-title d-flex justify-content-center">${post.name}</h5>
+          <p class="card-text d-flex justify-content-center">Modelo: ${post.model}</p>
+          <p class="card-text d-flex justify-content-center">Marca: ${post.brand}</p>
+          <p class="card-text d-flex justify-content-center">Precio: ${post.price}</p>
+          <p class="card-text d-flex justify-content-center">Stock: ${post.stock}</p>
+          <input id="comprar" type="submit" value="comprar" class="d-flex justify-content-center comprar"/>
+        </div>`;
+      renderProducts.appendChild(card);
+    });
+  });

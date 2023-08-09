@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Motor",
+        "model": "Motor vitara",
+        "brand": "Suzuki",
+        "price": 200000,
+        "stock": 1,
+        "imgUrl": "https://www.imporsaldos.com/wp-content/uploads/2020/06/Motor-Grand-Vitara-2.5lIMG_7398-scaled.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Motor",
+        "model": "106 sport",
+        "brand": "Peugeot",
+        "price": 100000,
+        "stock": 1,
+        "imgUrl": "https://www.motorwebargentina.com/wp-content/uploads/2014/07/207_0701tech_g8-copy.jpg"
+    }
+]

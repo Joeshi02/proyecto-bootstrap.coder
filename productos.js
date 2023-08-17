@@ -81,7 +81,7 @@ mostrarAgregados();
 
 const renderProducts = document.querySelector('#render');
 
-fetch('/assets/data/data.json')
+fetch('../assets/data/data.json')
   .then(respuesta => respuesta.json())
   .then(data => {
     data.forEach(renderizado => {
